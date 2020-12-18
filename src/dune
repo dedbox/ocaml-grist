@@ -1,0 +1,15 @@
+(library
+ (name grist)
+ (modules :standard \ Repl)
+ (libraries angstrom)
+ (preprocess
+  (pps ppx_inline_test ppx_deriving.show))
+ (inline_tests)
+ (wrapped false))
+
+(executable
+ (name repl)
+ (modules Repl)
+ (libraries grist)
+ (preprocess
+  (pps ppx_inline_test ppx_deriving.show)))
